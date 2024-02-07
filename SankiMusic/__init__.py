@@ -18,9 +18,9 @@ heroku()
 sudo()
 
 # Clients
-app = App()
+app = Boy()
 
-bot = Bot()
+bot = App()
 
 
 from SankiMusic.utilities.media import *
