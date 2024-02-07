@@ -1,4 +1,3 @@
-import sys
 
 from pyrogram import Client
 from ...console import LOGGER
