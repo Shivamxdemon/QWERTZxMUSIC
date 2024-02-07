@@ -18,7 +18,7 @@ heroku()
 sudo()
 
 # Clients
-app = Boy()
+app = Bot()
 
 bot = App()
 
