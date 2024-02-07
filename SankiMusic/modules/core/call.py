@@ -53,7 +53,7 @@ class Call(PyTgCalls):
         self.app1 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_string=str(config.STRING1),
+            session_name=str(config.STRING1),
         )
         self.one = PyTgCalls(
             self.app1,
@@ -62,7 +62,7 @@ class Call(PyTgCalls):
         self.app2 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_string=str(config.STRING2),
+            session_name=str(config.STRING2),
         )
         self.two = PyTgCalls(
             self.app2,
@@ -71,7 +71,7 @@ class Call(PyTgCalls):
         self.app3 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_string=str(config.STRING3),
+            session_name=str(config.STRING3),
         )
         self.three = PyTgCalls(
             self.app3,
@@ -80,7 +80,7 @@ class Call(PyTgCalls):
         self.app4 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_string=str(config.STRING4),
+            session_name=str(config.STRING4),
         )
         self.four = PyTgCalls(
             self.app4,
@@ -89,7 +89,7 @@ class Call(PyTgCalls):
         self.app5 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_string=str(config.STRING5),
+            session_name=str(config.STRING5),
         )
         self.five = PyTgCalls(
             self.app5,
