@@ -2,7 +2,7 @@ import sys
 
 from pyrogram import Client
 
-from Sankimusic.utilities import config
+from SankiMusic.utilities import config
 
 from ..logging import LOGGER
 
