@@ -14,10 +14,6 @@ from SankiMusic.utilities.config import BANNED_USERS
 from SankiMusic.plugins import ALL_MODULES
 
 
-loop = asyncio.get_event_loop()
-
-
-
 async def init():
     if (
         not config.STRING1
