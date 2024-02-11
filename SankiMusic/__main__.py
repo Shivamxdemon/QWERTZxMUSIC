@@ -7,6 +7,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 from SankiMusic import LOGGER, app, bot
 from SankiMusic.modules.core.call import Kaal
+from SankiMusic.misc import sudo
 from SankiMusic.modules.main.database import get_banned_users, get_gbanned
 from SankiMusic.utilities import config
 from SankiMusic.utilities.config import BANNED_USERS
