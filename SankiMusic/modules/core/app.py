@@ -1,44 +1,50 @@
 import sys
 
 from pyrogram import Client
-from ...console import LOGGER
 
-from SankiMusic.utilities import config
+from Sankimusic.utilities import config
+
+from ..logging import LOGGER
 
 assistants = []
 assistantids = []
 
 
-class App(Client):
+class Userbot(Client):
     def __init__(self):
         self.one = Client(
+            name="bgtxmusic1",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING1),
+            session_string=str(config.STRING1),
             no_updates=True,
         )
         self.two = Client(
+            name="bgtxmusic2",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING2),
+            session_string=str(config.STRING2),
             no_updates=True,
         )
         self.three = Client(
+            name="bgtxmusic3",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING3),
+            session_string=str(config.STRING3),
             no_updates=True,
         )
         self.four = Client(
+            name="bgtxmusic4",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING4),
+            session_string=str(config.STRING4),
             no_updates=True,
         )
         self.five = Client(
+            name="bgtxmusic5",
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING5),
+            session_string=str(config.STRING5),
             no_updates=True,
         )
 
@@ -47,9 +53,8 @@ class App(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("AdityaServer")
-                await self.one.join_chat("AdityaDiscus")
-                await self.one.join_chat("Sanki_World")
+                await self.one.join_chat("BikashGadgetsTech")
+                await self.one.join_chat("BikashGadgetsTech")
             except:
                 pass
             assistants.append(1)
@@ -65,11 +70,11 @@ class App(Client):
             else:
                 self.one.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Assistant Started as {self.one.name}"
+                f"𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐀𝐬 {self.one.name}"
             )
             try:
                 await self.one.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴏɴᴇ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.one.id}`\n❄ ɴᴀᴍᴇ : {self.one.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.one.username}"
+                    config.LOG_GROUP_ID, f"Assistant Started"
                 )
             except:
                 LOGGER(__name__).error(
@@ -79,9 +84,8 @@ class App(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("AdityaServer")
-                await self.one.join_chat("AdityaDiscus")
-                await self.one.join_chat("Sanki_World")
+                await self.two.join_chat("BikashGadgetsTech")
+                await self.two.join_chat("BikashGadgetsTech")
             except:
                 pass
             assistants.append(2)
@@ -98,7 +102,7 @@ class App(Client):
                 self.two.name = get_me.first_name
             try:
                 await self.two.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴡᴏ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.two.id}`\n❄ ɴᴀᴍᴇ : {self.two.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.two.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐓𝐰𝐨 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 :**\n\n✨ 𝐈𝐝 : `{self.two.id}`\n❄ 𝐍𝐚𝐦𝐞 : {self.two.name}\n💫 𝐔𝐬𝐞𝐫𝐍𝐚𝐦𝐞 : @{self.two.username}"
                 )
             except:
                 LOGGER(__name__).error(
@@ -106,14 +110,13 @@ class App(Client):
                 )
                 sys.exit()
             LOGGER(__name__).info(
-                f"Assistant Two Started as {self.two.name}"
+                f"𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐓𝐰𝐨 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐀𝐬 {self.two.name}"
             )
         if config.STRING3:
             await self.three.start()
             try:
-                await self.three.join_chat("AdityaServer")
-                await self.one.join_chat("AdityaDiscus")
-                await self.one.join_chat("Sanki_World")
+                await self.three.join_chat("BikashGadgetsTech")
+                await self.three.join_chat("BikashGadgetsTech")
             except:
                 pass
             assistants.append(3)
@@ -130,7 +133,7 @@ class App(Client):
                 self.three.name = get_me.first_name
             try:
                 await self.three.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛʜʀᴇᴇ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.three.id}`\n❄ ɴᴀᴍᴇ : {self.three.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.three.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐓𝐡𝐫𝐞𝐞 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 :**\n\n✨ 𝐈𝐝 : `{self.three.id}`\n❄ 𝐍𝐚𝐦𝐞 : {self.three.name}\n💫 𝐔𝐬𝐞𝐫𝐍𝐚𝐦𝐞 : @{self.three.username}"
                 )
             except:
                 LOGGER(__name__).error(
@@ -138,14 +141,13 @@ class App(Client):
                 )
                 sys.exit()
             LOGGER(__name__).info(
-                f"Assistant Three Started as {self.three.name}"
+                f"𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐓𝐡𝐫𝐞𝐞 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐀𝐬 {self.three.name}"
             )
         if config.STRING4:
             await self.four.start()
             try:
-                await self.four.join_chat("AdityaServer")
-                await self.one.join_chat("AdityaDiscus")
-                await self.one.join_chat("Sanki_World")
+                await self.four.join_chat("BikashGadgetsTech")
+                await self.four.join_chat("BikashGadgetsTech")
             except:
                 pass
             assistants.append(4)
@@ -162,7 +164,7 @@ class App(Client):
                 self.four.name = get_me.first_name
             try:
                 await self.four.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ғᴏᴜʀ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.four.id}`\n❄ ɴᴀᴍᴇ : {self.four.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.four.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐅𝐨𝐮𝐫 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 :**\n\n✨ 𝐈𝐝 : `{self.four.id}`\n❄ 𝐍𝐚𝐦𝐞 : {self.four.name}\n💫 𝐔𝐬𝐞𝐫𝐍𝐚𝐦𝐞 : @{self.four.username}"
                 )
             except:
                 LOGGER(__name__).error(
@@ -170,14 +172,13 @@ class App(Client):
                 )
                 sys.exit()
             LOGGER(__name__).info(
-                f"Assistant Four Started as {self.four.name}"
+                f"𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐅𝐨𝐮𝐫 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐀𝐬 {self.four.name}"
             )
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("AdityaServer")
-                await self.one.join_chat("AdityaDiscus")
-                await self.one.join_chat("Sanki_World")
+                await self.five.join_chat("BikashGadgetsTech")
+                await self.five.join_chat("BikashGadgetsTech")
             except:
                 pass
             assistants.append(5)
@@ -194,7 +195,7 @@ class App(Client):
                 self.five.name = get_me.first_name
             try:
                 await self.five.send_message(
-                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} ᴀssɪsᴛᴀɴᴛ ғɪᴠᴇ sᴛᴀʀᴛᴇᴅ :**\n\n✨ ɪᴅ : `{self.five.id}`\n❄ ɴᴀᴍᴇ : {self.five.name}\n💫 ᴜsᴇʀɴᴀᴍᴇ : @{self.five.username}"
+                    config.LOG_GROUP_ID, f"**» {config.MUSIC_BOT_NAME} 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐅𝐢𝐯𝐞 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 :**\n\n✨ 𝐈𝐝 : `{self.five.id}`\n❄ 𝐍𝐚𝐦𝐞 : {self.five.name}\n💫 𝐔𝐬𝐞𝐫𝐍𝐚𝐦𝐞 : @{self.five.username}"
                 )
             except:
                 LOGGER(__name__).error(
@@ -202,5 +203,5 @@ class App(Client):
                 )
                 sys.exit()
             LOGGER(__name__).info(
-                f"Assistant Five Started as {self.five.name}"
-                )
+                f"𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐅𝐢𝐯𝐞 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐀𝐬 {self.five.name}"
+            )
