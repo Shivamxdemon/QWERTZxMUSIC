@@ -7,7 +7,7 @@
         "telegram bot",
         "pyrogram"
     ],
-    "repository": "https://github.com/XdityaHalder/SankiMusic",
+    "repository": "https://github.com/Shivamxdemon/QWERTZxMUSIC",
     "success_url": "https://t.me/AdityaDiscus",
     "env": {
         "API_ID": {
