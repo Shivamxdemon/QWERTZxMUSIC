@@ -4,7 +4,7 @@ from pyrogram import Client
 
 from SankiMusic.utilities import config
 
-from ..logging import LOGGER
+from ...console import LOGGER
 
 assistants = []
 assistantids = []
