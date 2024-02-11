@@ -7,8 +7,6 @@
         "telegram bot",
         "pyrogram"
     ],
-    "repository": "https://github.com/Shivamxdemon/QWERTZxMUSIC",
-    "success_url": "https://t.me/AdityaDiscus",
     "env": {
         "API_ID": {
             "description": "𝑬𝒏𝒕𝒆𝒓 𝒀𝒐𝒖𝒓 𝑨𝒑𝒊 𝑰𝑫",
