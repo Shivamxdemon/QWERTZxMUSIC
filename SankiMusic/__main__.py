@@ -16,6 +16,7 @@ from SankiMusic.plugins import ALL_MODULES
 loop = asyncio.get_event_loop()
 
 
+
 async def init():
     if (
         not config.STRING1
@@ -24,17 +25,9 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER("SankiMusic").error(
-            "No Pyrogram String Defined !!..."
-        )
-        return
-    if (
-        not config.SPOTIFY_CLIENT_ID
-        and not config.SPOTIFY_CLIENT_SECRET
-    ):
-        LOGGER("SankiMusic").warning(
-            "Spotify Queries Not Working Without Spotify ID & Secret."
-        )
+        LOGGER(__name__).error("Assistant client variables not defined, exiting...")
+        exit()
+    await sudo()
     try:
         users = await get_gbanned()
         for user_id in users:
@@ -44,30 +37,30 @@ async def init():
             BANNED_USERS.add(user_id)
     except:
         pass
-    await bot.start()
+    await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("SankiMusic.plugins" + all_module)
-    LOGGER("SankiMusic.plugins").info(
-        "Necessary Modules Imported Successfully."
-    )
-    await app.start()
-    await Kaal.start()
+    LOGGER("SankiMusic.plugins").info("Successfully Imported Modules...")
+    await userbot.start()
+    await Anony.start()
     try:
-        await Kaal.stream_call(
-            "https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4"
-        )
+        await Anony.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
         LOGGER("SankiMusic").error(
-            "[ERROR] - \n\nHey, At first Please Turn On VC in Your Logger Group."
+            "Please turn on the videochat of your log group\channel.\n\nStopping Bot..."
         )
-        sys.exit()
+        exit()
     except:
         pass
-    await Kaal.decorators()
-    LOGGER("SankiMusic").info("Congratulations, Your SankiMusic Bot Now Deployed ...")
+    await Anony.decorators()
+    LOGGER("SankiMusic").info(
+        "\x41\x6e\x6f\x6e\x58\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74\x20\x53\x74\x61\x72\x74\x65\x64\x20\x53\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x6c\x79\x2e\n\n\x44\x6f\x6e'\x74\x20\x66\x6f\x72\x67\x65\x74\x20\x74\x6f\x20\x76\x69\x73\x69\x74\x20\x40\x46\x61\x6c\x6c\x65\x6e\x41\x73\x73\x6f\x63\x69\x61\x74\x69\x6f\x6e"
+    )
     await idle()
+    await app.stop()
+    await userbot.stop()
+    LOGGER("SankiMusic").info("Stopping AnonX Music Bot...")
 
 
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(init())
-    LOGGER("SankiMusic").info("Stopping Music Bot...")
