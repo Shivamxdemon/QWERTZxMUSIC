@@ -17,7 +17,6 @@ STOP_COMMAND = get_command("STOP_COMMAND")
 @bot.on_message(
     command(STOP_COMMAND)
     & filters.group
-    & ~filters.edited
     & ~BANNED_USERS
 )
 @AdminRightsCheck
