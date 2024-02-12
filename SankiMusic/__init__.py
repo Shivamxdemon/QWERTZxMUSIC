@@ -1,7 +1,7 @@
 from aiohttp import ClientSession
 from .console import LOGGER
 
-from SankiMusic.modules.core.app import App
+from SankiMusic.modules.core.app import Qwertz
 from SankiMusic.modules.core.bot import Bot
 from SankiMusic.modules.core.dirs import dirr
 from SankiMusic.modules.core.git import git
