@@ -15,7 +15,7 @@ heroku()
 # Clients
 app = Bot()
 
-bot = App()
+bot = Qwertz()
 
 
 from SankiMusic.utilities.media import *
