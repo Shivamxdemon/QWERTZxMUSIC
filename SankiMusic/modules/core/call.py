@@ -14,7 +14,7 @@ from pytgcalls.exceptions import (AlreadyJoinedError,
 from ntgcalls import TelegramServerError
 from pytgcalls.types import (JoinedGroupCallParticipant,
                              LeftGroupCallParticipant, Update)
-from pytgcalls.types.input_stream import AudioImagePiped, AudioPiped, AudioVideoPiped
+from pytgcalls.types.stream.legacy import AudioImagePiped, AudioPiped, AudioVideoPiped
 from pytgcalls.types.stream import StreamAudioEnded
 
 from SankiMusic.utilities import config
