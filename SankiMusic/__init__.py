@@ -8,14 +8,9 @@ from SankiMusic.modules.core.git import git
 from SankiMusic.misc import dbb, heroku, sudo
 
 dirr()
-
 git()
-
 dbb()
-
 heroku()
-
-sudo()
 
 # Clients
 app = Bot()
