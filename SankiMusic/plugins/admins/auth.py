@@ -85,7 +85,6 @@ async def auth(client, message: Message, _):
 @bot.on_message(
     filters.command(UNAUTH_COMMAND)
     & filters.group
-    & ~filters.edited
     & ~BANNED_USERS
 )
 @AdminActual
