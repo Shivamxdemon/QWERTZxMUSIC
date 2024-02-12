@@ -2,7 +2,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 
 from SankiMusic.utilities.config import MONGO_DB_URL
 
-from ..logging import LOGGER
+from ...console import LOGGER
 
 LOGGER(__name__).info("Connecting to your Mongo Database...")
 try:
