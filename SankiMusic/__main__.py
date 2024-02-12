@@ -36,7 +36,7 @@ async def init():
         pass
     await app.start()
     for all_module in ALL_MODULES:
-        importlib.import_module("SankiMusic.plugins" + all_module)
+        importlib.import_module("SankiMusic.plugins{all_module}")
     LOGGER("SankiMusic.plugins").info("Successfully Imported Modules...")
     await app.start()
     await Kaal.start()
