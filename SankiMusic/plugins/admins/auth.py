@@ -58,32 +58,18 @@ async def auth(client, message: Message, _):
 async def unauthusers(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text("**» ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ's ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ ᴜsᴇʀɴᴀᴍᴇ/ᴜsᴇʀ_ɪᴅ.**")
-        user = message.text.split(None, 1)[1]
-        if "@" in user:
-            user = user.replace("@", "")
-        user = await bot.get_users(user)
-        token = await int_to_alpha(user.id)
-        deleted = await delete_authuser(message.chat.id, token)
-        get = adminlist.get(message.chat.id)
-        if get:
-            if user.id in get:
-                get.remove(user.id)
-        if deleted:
-            return await message.reply_text("**» ʀᴇᴍᴏᴠᴇᴅ ꜰʀᴏᴍ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ ᴏꜰ ᴛʜɪs ɢʀᴏᴜᴘ.**")
-        else:
-            return await message.reply_text("**» ᴛᴀʀɢᴇᴛᴇᴅ ᴜsᴇʀ ɪs ɴᴏᴛ ᴀɴ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀ.**")
-    user_id = message.reply_to_message.from_user.id
-    token = await int_to_alpha(user_id)
+            return await message.reply_text(_["general_1"])
+    user = await extract_user(message)
+    token = await int_to_alpha(user.id)
     deleted = await delete_authuser(message.chat.id, token)
     get = adminlist.get(message.chat.id)
     if get:
-        if user_id in get:
-            get.remove(user_id)
+        if user.id in get:
+            get.remove(user.id)
     if deleted:
-        return await message.reply_text("**» ʀᴇᴍᴏᴠᴇᴅ ꜰʀᴏᴍ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀs ʟɪsᴛ ᴏꜰ ᴛʜɪs ɢʀᴏᴜᴘ.**")
+        return await message.reply_text(_["auth_4"].format(user.mention))
     else:
-        return await message.reply_text("**» ᴛᴀʀɢᴇᴛᴇᴅ ᴜsᴇʀ ɪs ɴᴏᴛ ᴀɴ ᴀᴜᴛʜᴏʀɪsᴇᴅ ᴜsᴇʀ.**")
+        return await message.reply_text(_["auth_5"].format(user.mention))
 
 
 @bot.on_message(
@@ -92,25 +78,23 @@ async def unauthusers(client, message: Message, _):
     & ~BANNED_USERS
 )
 async def authusers(client, message: Message, _):
-    _playlist = await get_authuser_names(message.chat.id)
-    if not _playlist:
-        return await message.reply_text(_["setting_5"])
+    _wtf = await get_authuser_names(message.chat.id)
+    if not _wtf:
+        return await message.reply_text(_["setting_4"])
     else:
         j = 0
         mystic = await message.reply_text(_["auth_6"])
-        text = _["auth_7"]
-        for note in _playlist:
-            _note = await get_authuser(message.chat.id, note)
-            user_id = _note["auth_user_id"]
-            admin_id = _note["admin_id"]
-            admin_name = _note["admin_name"]
+        text = _["auth_7"].format(message.chat.title)
+        for umm in _wtf:
+            _umm = await get_authuser(message.chat.id, umm)
+            user_id = _umm["auth_user_id"]
+            admin_id = _umm["admin_id"]
+            admin_name = _umm["admin_name"]
             try:
-                user = await bot.get_users(user_id)
-                user = user.first_name
+                user = (await app.get_users(user_id)).first_name
                 j += 1
-            except Exception:
+            except:
                 continue
-            text += f"{j}➤ {user}[`{user_id}`]\n"
-            text += f"   {_['auth_8']} {admin_name}[`{admin_id}`]\n\n"
-        await mystic.delete()
-        await message.reply_text(text)
+            text += f"{j}➤ {user}[<code>{user_id}</code>]\n"
+            text += f"   {_['auth_8']} {admin_name}[<code>{admin_id}</code>]\n\n"
+        await mystic.edit_text(text, reply_markup=close_markup(_))
