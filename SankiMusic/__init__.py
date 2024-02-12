@@ -15,7 +15,7 @@ heroku()
 # Clients
 app = App()
 
-bot = Bot()
+bot = App()
 
 
 from SankiMusic.utilities.media import *
