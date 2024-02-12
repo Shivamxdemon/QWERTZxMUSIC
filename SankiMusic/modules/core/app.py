@@ -10,7 +10,7 @@ assistants = []
 assistantids = []
 
 
-class App(Client):
+class Qwertz(Client):
     def __init__(self):
         self.one = Client(
             name="bgtxmusic1",
