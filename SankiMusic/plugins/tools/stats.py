@@ -14,7 +14,7 @@ from SankiMusic.utilities.config import BANNED_USERS, MUSIC_BOT_NAME
 from SankiMusic.utilities.strings import get_command
 from SankiMusic import YouTube, bot
 from SankiMusic.modules.core.app import assistants
-from SankiMusic.misc import SUDOERS, pymongodb
+from SankiMusic.misc import SUDOERS, mongodb
 from SankiMusic.plugins import ALL_MODULES
 from SankiMusic.modules.main.database import (get_global_tops,
                                        get_particulars, get_queries,
