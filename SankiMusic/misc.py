@@ -5,7 +5,7 @@ import heroku3
 from pyrogram import filters
 
 from SankiMusic.utilities import config
-from SankiMusic.modules.core.sdb import pymongodb
+from SankiMusic.modules.core.sdb import mongodb
 
 from .console import LOGGER
 
