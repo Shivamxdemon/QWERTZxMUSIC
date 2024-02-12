@@ -122,7 +122,6 @@ async def unauthusers(client, message: Message, _):
 @bot.on_message(
     filters.command(AUTHUSERS_COMMAND)
     & filters.group
-    & ~filters.edited
     & ~BANNED_USERS
 )
 async def authusers(client, message: Message, _):
