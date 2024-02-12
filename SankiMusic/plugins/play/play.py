@@ -35,7 +35,6 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 @bot.on_message(
     command(PLAY_COMMAND)
     & filters.group
-    & ~filters.edited
     & ~BANNED_USERS
 )
 @PlayWrapper
