@@ -1,3 +1,4 @@
+from pytgcalls import PyTgCalls, StreamType
 from SankiMusic.utilities import config
 from SankiMusic.utilities.config import PRIVATE_BOT_MODE
 from SankiMusic.modules.core.sdb import mongodb
