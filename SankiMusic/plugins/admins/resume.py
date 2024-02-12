@@ -17,7 +17,6 @@ RESUME_COMMAND = get_command("RESUME_COMMAND")
 @bot.on_message(
     command(RESUME_COMMAND)
     & filters.group
-    & ~filters.edited
     & ~BANNED_USERS
 )
 @AdminRightsCheck
