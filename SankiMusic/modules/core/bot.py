@@ -1,6 +1,7 @@
 import sys
 
 from pyrogram import Client
+from pyrogram.enums import ChatMemberStatus, ParseMode
 from ...console import LOGGER
 
 from SankiMusic.utilities import config
