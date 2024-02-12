@@ -13,7 +13,7 @@ dbb()
 heroku()
 
 # Clients
-app = App()
+app = Bot()
 
 bot = App()
 
