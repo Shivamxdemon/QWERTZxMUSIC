@@ -1,6 +1,6 @@
 import sys
 
-from pyrogram import Client
+from pyrogram import Client, errors
 from pyrogram.enums import ChatMemberStatus, ParseMode
 from ...console import LOGGER
 
