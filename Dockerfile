@@ -9,7 +9,7 @@ RUN python3 -m pip install -U pip
 RUN pip3 install -U wheel setuptools
 RUN apt install -y ffmpeg apt-utils build-essential python3-dev
 COPY . .
-RUN pip3 install --no-cache-dir -U -r requirements.txt
+RUN pip3 install --no-cache-dir -U -r installer
 RUN apt update && apt autoremove -y
 RUN apt clean && rm -rf /var/lib/apt/lists/* ~/.thumbs/* ~/.cache
 CMD python3 -m SankiMusic
