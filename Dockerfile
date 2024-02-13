@@ -6,4 +6,5 @@ RUN apt-get update -y && apt-get upgrade -y \
 COPY . /aditya/
 WORKDIR /aditya/
 RUN pip3 install --no-cache-dir --upgrade --requirement Installer
+RUN pip3 install python-telegram-bot==13.3
 CMD python3 -m SankiMusic
