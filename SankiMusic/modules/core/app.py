@@ -1,6 +1,6 @@
 from pyrogram import Client
 
-import SankiMusic.utilities import config
+from SankiMusic.utilities import config
 
 from ...console import LOGGER
 
