@@ -1,8 +1,6 @@
-import sys
-
 from pyrogram import Client
 
-from SankiMusic.utilities import config
+import SankiMusic.utilities import config
 
 from ...console import LOGGER
 
@@ -10,7 +8,7 @@ assistants = []
 assistantids = []
 
 
-class Qwertz(Client):
+class Userbot(Client):
     def __init__(self):
         self.one = Client(
             name="AnonXAss1",
