@@ -11,7 +11,7 @@ assistantids = []
 
 
 class Qwertz(Client):
-               def __init__(self):
+    def __init__(self):
         self.one = Client(
             name="AnonXAss1",
             api_id=config.API_ID,
